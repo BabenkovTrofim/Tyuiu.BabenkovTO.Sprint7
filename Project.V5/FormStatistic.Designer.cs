@@ -28,82 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.splitContainerStats_BTO = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewStats_BTO = new System.Windows.Forms.DataGridView();
-            this.chartStats_BTO = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerStats_BTO)).BeginInit();
-            this.splitContainerStats_BTO.Panel1.SuspendLayout();
-            this.splitContainerStats_BTO.Panel2.SuspendLayout();
-            this.splitContainerStats_BTO.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStats_BTO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStats_BTO)).BeginInit();
-            this.SuspendLayout();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            splitContainerStats_BTO = new SplitContainer();
+            dataGridViewStats_BTO = new DataGridView();
+            chartStats_BTO = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)splitContainerStats_BTO).BeginInit();
+            splitContainerStats_BTO.Panel1.SuspendLayout();
+            splitContainerStats_BTO.Panel2.SuspendLayout();
+            splitContainerStats_BTO.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStats_BTO).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartStats_BTO).BeginInit();
+            SuspendLayout();
             // 
             // splitContainerStats_BTO
             // 
-            this.splitContainerStats_BTO.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerStats_BTO.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerStats_BTO.Name = "splitContainerStats_BTO";
+            splitContainerStats_BTO.Dock = DockStyle.Fill;
+            splitContainerStats_BTO.Location = new Point(0, 0);
+            splitContainerStats_BTO.Margin = new Padding(4, 5, 4, 5);
+            splitContainerStats_BTO.Name = "splitContainerStats_BTO";
             // 
             // splitContainerStats_BTO.Panel1
             // 
-            this.splitContainerStats_BTO.Panel1.Controls.Add(this.dataGridViewStats_BTO);
+            splitContainerStats_BTO.Panel1.Controls.Add(dataGridViewStats_BTO);
             // 
             // splitContainerStats_BTO.Panel2
             // 
-            this.splitContainerStats_BTO.Panel2.Controls.Add(this.chartStats_BTO);
-            this.splitContainerStats_BTO.Size = new System.Drawing.Size(900, 500);
-            this.splitContainerStats_BTO.SplitterDistance = 400;
-            this.splitContainerStats_BTO.TabIndex = 0;
+            splitContainerStats_BTO.Panel2.Controls.Add(chartStats_BTO);
+            splitContainerStats_BTO.Size = new Size(1200, 769);
+            splitContainerStats_BTO.SplitterDistance = 533;
+            splitContainerStats_BTO.SplitterWidth = 5;
+            splitContainerStats_BTO.TabIndex = 0;
             // 
             // dataGridViewStats_BTO
             // 
-            this.dataGridViewStats_BTO.AllowUserToAddRows = false;
-            this.dataGridViewStats_BTO.AllowUserToDeleteRows = false;
-            this.dataGridViewStats_BTO.AllowUserToOrderColumns = true;
-            this.dataGridViewStats_BTO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStats_BTO.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewStats_BTO.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewStats_BTO.Name = "dataGridViewStats_BTO";
-            this.dataGridViewStats_BTO.ReadOnly = true;
-            this.dataGridViewStats_BTO.Size = new System.Drawing.Size(400, 500);
-            this.dataGridViewStats_BTO.TabIndex = 0;
+            dataGridViewStats_BTO.AllowUserToAddRows = false;
+            dataGridViewStats_BTO.AllowUserToDeleteRows = false;
+            dataGridViewStats_BTO.AllowUserToOrderColumns = true;
+            dataGridViewStats_BTO.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewStats_BTO.Dock = DockStyle.Fill;
+            dataGridViewStats_BTO.Location = new Point(0, 0);
+            dataGridViewStats_BTO.Margin = new Padding(4, 5, 4, 5);
+            dataGridViewStats_BTO.Name = "dataGridViewStats_BTO";
+            dataGridViewStats_BTO.ReadOnly = true;
+            dataGridViewStats_BTO.RowHeadersWidth = 51;
+            dataGridViewStats_BTO.Size = new Size(533, 769);
+            dataGridViewStats_BTO.TabIndex = 0;
             // 
             // chartStats_BTO
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartStats_BTO.ChartAreas.Add(chartArea1);
-            this.chartStats_BTO.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartStats_BTO.Legends.Add(legend1);
-            this.chartStats_BTO.Location = new System.Drawing.Point(0, 0);
-            this.chartStats_BTO.Name = "chartStats_BTO";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Статистика";
-            this.chartStats_BTO.Series.Add(series1);
-            this.chartStats_BTO.Size = new System.Drawing.Size(496, 500);
-            this.chartStats_BTO.TabIndex = 0;
-            this.chartStats_BTO.Text = "Статистика по мастерским";
+            chartArea2.Name = "ChartArea1";
+            chartStats_BTO.ChartAreas.Add(chartArea2);
+            chartStats_BTO.Dock = DockStyle.Fill;
+            legend2.Name = "Legend1";
+            chartStats_BTO.Legends.Add(legend2);
+            chartStats_BTO.Location = new Point(0, 0);
+            chartStats_BTO.Margin = new Padding(4, 5, 4, 5);
+            chartStats_BTO.Name = "chartStats_BTO";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Статистика";
+            chartStats_BTO.Series.Add(series2);
+            chartStats_BTO.Size = new Size(662, 769);
+            chartStats_BTO.TabIndex = 0;
+            chartStats_BTO.Text = "Статистика по мастерским";
             // 
-            // FormStatistic_BTO
+            // FormStatistic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 500);
-            this.Controls.Add(this.splitContainerStats_BTO);
-            this.Name = "FormStatistic_BTO";
-            this.Text = "Статистика — Авторемонтные мастерские";
-            this.splitContainerStats_BTO.Panel1.ResumeLayout(false);
-            this.splitContainerStats_BTO.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerStats_BTO)).EndInit();
-            this.splitContainerStats_BTO.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStats_BTO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStats_BTO)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1200, 769);
+            Controls.Add(splitContainerStats_BTO);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "FormStatistic";
+            Text = "Статистика — Авторемонтные мастерские";
+            splitContainerStats_BTO.Panel1.ResumeLayout(false);
+            splitContainerStats_BTO.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainerStats_BTO).EndInit();
+            splitContainerStats_BTO.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewStats_BTO).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartStats_BTO).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

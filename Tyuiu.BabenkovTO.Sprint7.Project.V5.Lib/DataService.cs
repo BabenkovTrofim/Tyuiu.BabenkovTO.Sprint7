@@ -4,12 +4,15 @@
     {
         private readonly string _filePath;
 
+
+        // путь файла, проверка его существования
         public DataService(string filePath)
         {
             _filePath = filePath;
             EnsureFileExists();
         }
 
+        // если файла нет, то создается новый с заголовком
         private void EnsureFileExists()
         {
             if (!File.Exists(_filePath))
@@ -19,6 +22,7 @@
                                              "Название мастерской,Телефон мастерской\n");
         }
 
+        // читаем файл с 1 индекса(заголовок - 0 индекс - пропускаем)
         public List<RepairRecord> LoadRecords()
         {
             var records = new List<RepairRecord>();
@@ -26,7 +30,7 @@
             for (int i = 1; i < lines.Length; i++)
             {
                 var parts = lines[i].Split(',');
-                if (parts.Length != 10) continue;
+                if (parts.Length != 10) continue; //должно быть 10 частей, если нет, то пропускаем
 
                 records.Add(new RepairRecord
                 {
@@ -57,6 +61,8 @@
             File.WriteAllLines(_filePath, lines);
         }
 
+
+        // добавил/удалил строку
         public void AddRecord(RepairRecord record)
         {
             var records = LoadRecords();
@@ -74,6 +80,8 @@
             }
         }
 
+        
+        // поиск записей
         public List<RepairRecord> SearchByOwnerName(string query)
         {
             return LoadRecords().Where(r => r.OwnerFullName.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
@@ -84,8 +92,12 @@
             return LoadRecords().Where(r => r.CarBrand.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
+        
+        // Статистика
         public int GetTotalRecords() => LoadRecords().Count;
         public int GetUniqueWorkshops() => LoadRecords().Select(r => r.WorkshopName).Distinct().Count();
         public int GetUniqueMechanics() => LoadRecords().Select(r => r.MechanicFullName).Distinct().Count();
+
+
     }
 }

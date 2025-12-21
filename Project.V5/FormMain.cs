@@ -12,23 +12,24 @@ namespace Project.V5
             InitializeComponent();
             _dataService = new DataService(_currentFilePath);
             LoadDataGrid_BTO();
-            
+
         }
 
-        
+
+        // загружаю данные в таблицу
         private void LoadDataGrid_BTO()
         {
-            dataGridViewMain_BTO.DataSource = _dataService.LoadRecords();
+            dataGridViewMain_BTO.DataSource = _dataService.LoadRecords(); // поместил список(List<RepairRecord>) в таблицу
             dataGridViewMain_BTO.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonAdd_BTO_Click(object sender, EventArgs e)
         {
-            var form = new FormAddRecord();
-            if (form.ShowDialog() == DialogResult.OK)
+            var form = new FormAddRecord(); // открыл форму для ввода данных
+            if (form.ShowDialog() == DialogResult.OK) // если пользователь нвжал ОК, то ..
             {
                 _dataService.AddRecord(form.CreatedRecord_BTO);
-                LoadDataGrid_BTO();
+                LoadDataGrid_BTO(); // обновил таблицу в интерфейсе
             }
         }
 
@@ -41,7 +42,7 @@ namespace Project.V5
             }
 
             var rowIndex = dataGridViewMain_BTO.SelectedRows[0].Index;
-            _dataService.DeleteRecord(rowIndex);
+            _dataService.DeleteRecord(rowIndex); // удалил выбранную строку по индексу
             LoadDataGrid_BTO();
         }
 
@@ -71,7 +72,7 @@ namespace Project.V5
             }
         }
 
-        private void buttonRefresh_BTO_Click(object sender, EventArgs e)
+        private void buttonRefresh_BTO_Click(object sender, EventArgs e) // обновил таблицу
         {
             LoadDataGrid_BTO();
             textBoxSearchOwner_BTO.Clear();
@@ -93,7 +94,7 @@ namespace Project.V5
 
         private void buttonSaveFile_BTO_Click(object sender, EventArgs e)
         {
-            using (var sfd = new SaveFileDialog { Filter = "CSV Files|*.csv", FileName = "repairs_export_BTO.csv" })
+            using (var sfd = new SaveFileDialog { Filter = "CSV Files|*.csv", FileName = "exportFile_BTO.csv" })
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -103,10 +104,20 @@ namespace Project.V5
             }
         }
 
-        // MenuStrip
+        // MenuStrip(файл, отчеты, справка)
         private void выходToolStripMenuItem_BTO_Click(object sender, EventArgs e) => Application.Exit();
         private void оПрограммеToolStripMenuItem_BTO_Click(object sender, EventArgs e) => new FormAbout().ShowDialog();
         private void руководствоПользователяToolStripMenuItem_BTO_Click(object sender, EventArgs e) => new FormGuide().ShowDialog();
         private void статистикаToolStripMenuItem_BTO_Click(object sender, EventArgs e) => new FormStatistic(_dataService).ShowDialog();
+
+        private void файлToolStripMenuItem_BTO_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void отчётыToolStripMenuItem_BTO_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

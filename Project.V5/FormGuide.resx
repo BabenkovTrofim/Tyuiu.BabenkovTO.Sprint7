@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textBoxGuide_BTO.Text" xml:space="preserve">
-    <value>1. Открытие файла: меню 'Файл → Открыть' или кнопка на панели.
+    <value>                          РУКОВОДСТВО ПОЛЬЗОВАТЕЛЯ
+1. Открытие файла: меню 'Файл → Открыть' или кнопка на панели.
 2. Добавление записи: нажмите 'Добавить' → заполните форму.
 3. Удаление: выделите строку → 'Удалить'.
 4. Поиск:

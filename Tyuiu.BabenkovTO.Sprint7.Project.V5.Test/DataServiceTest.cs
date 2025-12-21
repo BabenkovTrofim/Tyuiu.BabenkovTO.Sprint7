@@ -16,8 +16,9 @@ namespace Tyuiu.BabenkovTO.Sprint7.Project.V5.Test
             [TestMethod]
             public void AddAndLoadRecordTest()
             {
-                var service = new DataService(TestFile);
-                var record = new RepairRecord
+                var service = new DataService(TestFile);// временный файл
+
+                var record = new RepairRecord  //создал тестовую запись
                 {
                     DriversLicenseNumber = "123456",
                     OwnerFullName = "Иванов Иван Иванович",
@@ -31,8 +32,8 @@ namespace Tyuiu.BabenkovTO.Sprint7.Project.V5.Test
                     WorkshopPhone = "+74951112233"
                 };
 
-                service.AddRecord(record);
-                var loaded = service.LoadRecords();
+                service.AddRecord(record); //добавил тестовую запись в файл
+                var loaded = service.LoadRecords();// загрузил все записи в массив
 
                 Assert.AreEqual(1, loaded.Count);
                 Assert.AreEqual("Toyota", loaded[0].CarBrand);

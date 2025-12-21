@@ -16,5 +16,10 @@ namespace Project.V5
         {
             InitializeComponent();
         }
+
+        private void buttonOkAbout_BTO_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

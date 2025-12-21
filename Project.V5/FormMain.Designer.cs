@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             menuStripMain_BTO = new MenuStrip();
             файлToolStripMenuItem_BTO = new ToolStripMenuItem();
             открытьToolStripMenuItem_BTO = new ToolStripMenuItem();
@@ -58,6 +59,8 @@
             textBoxSearchOwner_BTO = new TextBox();
             buttonSearchOwner_BTO = new Button();
             toolTipMain_BTO = new ToolTip(components);
+            splitter1 = new Splitter();
+            splitter2 = new Splitter();
             menuStripMain_BTO.SuspendLayout();
             toolStripMain_BTO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMain_BTO).BeginInit();
@@ -67,97 +70,111 @@
             // 
             // menuStripMain_BTO
             // 
-            menuStripMain_BTO.BackColor = Color.FromArgb(192, 255, 192);
+            menuStripMain_BTO.BackColor = Color.LightCyan;
             menuStripMain_BTO.ImageScalingSize = new Size(20, 20);
             menuStripMain_BTO.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem_BTO, отчётыToolStripMenuItem_BTO, справкаToolStripMenuItem_BTO });
             menuStripMain_BTO.Location = new Point(0, 0);
             menuStripMain_BTO.Name = "menuStripMain_BTO";
             menuStripMain_BTO.Padding = new Padding(10, 3, 0, 3);
-            menuStripMain_BTO.Size = new Size(1667, 35);
+            menuStripMain_BTO.Size = new Size(1667, 40);
             menuStripMain_BTO.TabIndex = 0;
             // 
             // файлToolStripMenuItem_BTO
             // 
-            файлToolStripMenuItem_BTO.BackColor = Color.CornflowerBlue;
+            файлToolStripMenuItem_BTO.BackColor = Color.LightSkyBlue;
             файлToolStripMenuItem_BTO.DropDownItems.AddRange(new ToolStripItem[] { открытьToolStripMenuItem_BTO, сохранитьКакToolStripMenuItem_BTO, toolStripSeparator1_BTO, выходToolStripMenuItem_BTO });
-            файлToolStripMenuItem_BTO.Font = new Font("Segoe UI", 11F);
+            файлToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            файлToolStripMenuItem_BTO.Image = (Image)resources.GetObject("файлToolStripMenuItem_BTO.Image");
             файлToolStripMenuItem_BTO.Name = "файлToolStripMenuItem_BTO";
-            файлToolStripMenuItem_BTO.Size = new Size(71, 29);
+            файлToolStripMenuItem_BTO.Size = new Size(99, 34);
             файлToolStripMenuItem_BTO.Text = "Файл";
             файлToolStripMenuItem_BTO.ToolTipText = "Нажмите, для управления файлом\r\n";
+            файлToolStripMenuItem_BTO.Click += файлToolStripMenuItem_BTO_Click;
             // 
             // открытьToolStripMenuItem_BTO
             // 
+            открытьToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            открытьToolStripMenuItem_BTO.Image = (Image)resources.GetObject("открытьToolStripMenuItem_BTO.Image");
             открытьToolStripMenuItem_BTO.Name = "открытьToolStripMenuItem_BTO";
-            открытьToolStripMenuItem_BTO.Size = new Size(236, 30);
+            открытьToolStripMenuItem_BTO.Size = new Size(261, 34);
             открытьToolStripMenuItem_BTO.Text = "Открыть...";
             открытьToolStripMenuItem_BTO.Click += buttonOpenFile_BTO_Click;
             // 
             // сохранитьКакToolStripMenuItem_BTO
             // 
+            сохранитьКакToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            сохранитьКакToolStripMenuItem_BTO.Image = (Image)resources.GetObject("сохранитьКакToolStripMenuItem_BTO.Image");
             сохранитьКакToolStripMenuItem_BTO.Name = "сохранитьКакToolStripMenuItem_BTO";
-            сохранитьКакToolStripMenuItem_BTO.Size = new Size(236, 30);
+            сохранитьКакToolStripMenuItem_BTO.Size = new Size(261, 34);
             сохранитьКакToolStripMenuItem_BTO.Text = "Сохранить как...";
             сохранитьКакToolStripMenuItem_BTO.Click += buttonSaveFile_BTO_Click;
             // 
             // toolStripSeparator1_BTO
             // 
             toolStripSeparator1_BTO.Name = "toolStripSeparator1_BTO";
-            toolStripSeparator1_BTO.Size = new Size(233, 6);
+            toolStripSeparator1_BTO.Size = new Size(258, 6);
             // 
             // выходToolStripMenuItem_BTO
             // 
+            выходToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            выходToolStripMenuItem_BTO.Image = (Image)resources.GetObject("выходToolStripMenuItem_BTO.Image");
             выходToolStripMenuItem_BTO.Name = "выходToolStripMenuItem_BTO";
-            выходToolStripMenuItem_BTO.Size = new Size(236, 30);
+            выходToolStripMenuItem_BTO.Size = new Size(261, 34);
             выходToolStripMenuItem_BTO.Text = "Выход";
             выходToolStripMenuItem_BTO.ToolTipText = "Закрыть программу";
             выходToolStripMenuItem_BTO.Click += выходToolStripMenuItem_BTO_Click;
             // 
             // отчётыToolStripMenuItem_BTO
             // 
-            отчётыToolStripMenuItem_BTO.BackColor = Color.CornflowerBlue;
+            отчётыToolStripMenuItem_BTO.BackColor = Color.LightSkyBlue;
             отчётыToolStripMenuItem_BTO.DropDownItems.AddRange(new ToolStripItem[] { статистикаToolStripMenuItem_BTO });
-            отчётыToolStripMenuItem_BTO.Font = new Font("Segoe UI", 11F);
+            отчётыToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            отчётыToolStripMenuItem_BTO.Image = (Image)resources.GetObject("отчётыToolStripMenuItem_BTO.Image");
             отчётыToolStripMenuItem_BTO.Name = "отчётыToolStripMenuItem_BTO";
-            отчётыToolStripMenuItem_BTO.Size = new Size(90, 29);
+            отчётыToolStripMenuItem_BTO.Size = new Size(122, 34);
             отчётыToolStripMenuItem_BTO.Text = "Отчёты";
+            отчётыToolStripMenuItem_BTO.Click += отчётыToolStripMenuItem_BTO_Click;
             // 
             // статистикаToolStripMenuItem_BTO
             // 
+            статистикаToolStripMenuItem_BTO.Image = (Image)resources.GetObject("статистикаToolStripMenuItem_BTO.Image");
             статистикаToolStripMenuItem_BTO.Name = "статистикаToolStripMenuItem_BTO";
-            статистикаToolStripMenuItem_BTO.Size = new Size(194, 30);
+            статистикаToolStripMenuItem_BTO.Size = new Size(210, 34);
             статистикаToolStripMenuItem_BTO.Text = "Статистика";
             статистикаToolStripMenuItem_BTO.Click += статистикаToolStripMenuItem_BTO_Click;
             // 
             // справкаToolStripMenuItem_BTO
             // 
-            справкаToolStripMenuItem_BTO.BackColor = Color.CornflowerBlue;
+            справкаToolStripMenuItem_BTO.BackColor = Color.LightSkyBlue;
             справкаToolStripMenuItem_BTO.DropDownItems.AddRange(new ToolStripItem[] { руководствоПользователяToolStripMenuItem_BTO, оПрограммеToolStripMenuItem_BTO });
-            справкаToolStripMenuItem_BTO.Font = new Font("Segoe UI", 11F);
+            справкаToolStripMenuItem_BTO.Font = new Font("Segoe UI", 13F);
+            справкаToolStripMenuItem_BTO.Image = (Image)resources.GetObject("справкаToolStripMenuItem_BTO.Image");
             справкаToolStripMenuItem_BTO.Name = "справкаToolStripMenuItem_BTO";
-            справкаToolStripMenuItem_BTO.Size = new Size(99, 29);
+            справкаToolStripMenuItem_BTO.Size = new Size(132, 34);
             справкаToolStripMenuItem_BTO.Text = "Справка";
             // 
             // руководствоПользователяToolStripMenuItem_BTO
             // 
+            руководствоПользователяToolStripMenuItem_BTO.Image = (Image)resources.GetObject("руководствоПользователяToolStripMenuItem_BTO.Image");
             руководствоПользователяToolStripMenuItem_BTO.Name = "руководствоПользователяToolStripMenuItem_BTO";
-            руководствоПользователяToolStripMenuItem_BTO.Size = new Size(331, 30);
+            руководствоПользователяToolStripMenuItem_BTO.Size = new Size(373, 34);
             руководствоПользователяToolStripMenuItem_BTO.Text = "Руководство пользователя";
             руководствоПользователяToolStripMenuItem_BTO.Click += руководствоПользователяToolStripMenuItem_BTO_Click;
             // 
             // оПрограммеToolStripMenuItem_BTO
             // 
+            оПрограммеToolStripMenuItem_BTO.Image = (Image)resources.GetObject("оПрограммеToolStripMenuItem_BTO.Image");
             оПрограммеToolStripMenuItem_BTO.Name = "оПрограммеToolStripMenuItem_BTO";
-            оПрограммеToolStripMenuItem_BTO.Size = new Size(331, 30);
+            оПрограммеToolStripMenuItem_BTO.Size = new Size(373, 34);
             оПрограммеToolStripMenuItem_BTO.Text = "О программе";
             оПрограммеToolStripMenuItem_BTO.Click += оПрограммеToolStripMenuItem_BTO_Click;
             // 
             // toolStripMain_BTO
             // 
-            toolStripMain_BTO.BackColor = Color.FromArgb(192, 255, 192);
+            toolStripMain_BTO.BackColor = Color.LightCyan;
             toolStripMain_BTO.ImageScalingSize = new Size(20, 20);
             toolStripMain_BTO.Items.AddRange(new ToolStripItem[] { buttonAdd_BTO, buttonDelete_BTO, toolStripSeparator2_BTO, buttonOpenFile_BTO, buttonSaveFile_BTO, toolStripSeparator3_BTO, buttonRefresh_BTO });
-            toolStripMain_BTO.Location = new Point(0, 35);
+            toolStripMain_BTO.Location = new Point(0, 40);
             toolStripMain_BTO.Name = "toolStripMain_BTO";
             toolStripMain_BTO.Size = new Size(1667, 32);
             toolStripMain_BTO.TabIndex = 1;
@@ -166,6 +183,7 @@
             // 
             buttonAdd_BTO.DisplayStyle = ToolStripItemDisplayStyle.Text;
             buttonAdd_BTO.Font = new Font("Segoe UI", 11F);
+            buttonAdd_BTO.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAdd_BTO.ImageTransparentColor = Color.Magenta;
             buttonAdd_BTO.Name = "buttonAdd_BTO";
             buttonAdd_BTO.Size = new Size(100, 29);
@@ -236,13 +254,13 @@
             dataGridViewMain_BTO.BackgroundColor = SystemColors.ActiveCaption;
             dataGridViewMain_BTO.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewMain_BTO.Dock = DockStyle.Fill;
-            dataGridViewMain_BTO.Location = new Point(4, 65);
+            dataGridViewMain_BTO.Location = new Point(4, 91);
             dataGridViewMain_BTO.Margin = new Padding(4, 7, 4, 7);
             dataGridViewMain_BTO.Name = "dataGridViewMain_BTO";
             dataGridViewMain_BTO.ReadOnly = true;
             dataGridViewMain_BTO.RowHeadersWidth = 51;
             dataGridViewMain_BTO.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewMain_BTO.Size = new Size(1659, 734);
+            dataGridViewMain_BTO.Size = new Size(1659, 703);
             dataGridViewMain_BTO.TabIndex = 2;
             // 
             // tableLayoutPanelMain_BTO
@@ -252,17 +270,18 @@
             tableLayoutPanelMain_BTO.Controls.Add(dataGridViewMain_BTO, 0, 1);
             tableLayoutPanelMain_BTO.Controls.Add(panelSearch_BTO, 0, 0);
             tableLayoutPanelMain_BTO.Dock = DockStyle.Fill;
-            tableLayoutPanelMain_BTO.Location = new Point(0, 67);
+            tableLayoutPanelMain_BTO.Location = new Point(0, 72);
             tableLayoutPanelMain_BTO.Margin = new Padding(4, 7, 4, 7);
             tableLayoutPanelMain_BTO.Name = "tableLayoutPanelMain_BTO";
             tableLayoutPanelMain_BTO.RowCount = 2;
-            tableLayoutPanelMain_BTO.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            tableLayoutPanelMain_BTO.RowStyles.Add(new RowStyle(SizeType.Absolute, 84F));
             tableLayoutPanelMain_BTO.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanelMain_BTO.Size = new Size(1667, 806);
+            tableLayoutPanelMain_BTO.Size = new Size(1667, 801);
             tableLayoutPanelMain_BTO.TabIndex = 3;
             // 
             // panelSearch_BTO
             // 
+            panelSearch_BTO.BackColor = Color.LightCyan;
             panelSearch_BTO.Controls.Add(labelSearchBrand_BTO);
             panelSearch_BTO.Controls.Add(textBoxSearchBrand_BTO);
             panelSearch_BTO.Controls.Add(buttonSearchBrand_BTO);
@@ -273,7 +292,7 @@
             panelSearch_BTO.Location = new Point(4, 7);
             panelSearch_BTO.Margin = new Padding(4, 7, 4, 7);
             panelSearch_BTO.Name = "panelSearch_BTO";
-            panelSearch_BTO.Size = new Size(1659, 44);
+            panelSearch_BTO.Size = new Size(1659, 70);
             panelSearch_BTO.TabIndex = 3;
             // 
             // labelSearchBrand_BTO
@@ -297,13 +316,16 @@
             // 
             // buttonSearchBrand_BTO
             // 
-            buttonSearchBrand_BTO.BackColor = Color.CornflowerBlue;
-            buttonSearchBrand_BTO.Location = new Point(1030, 0);
+            buttonSearchBrand_BTO.BackColor = Color.LightSkyBlue;
+            buttonSearchBrand_BTO.Image = (Image)resources.GetObject("buttonSearchBrand_BTO.Image");
+            buttonSearchBrand_BTO.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSearchBrand_BTO.Location = new Point(1025, 0);
             buttonSearchBrand_BTO.Margin = new Padding(4, 7, 4, 7);
             buttonSearchBrand_BTO.Name = "buttonSearchBrand_BTO";
-            buttonSearchBrand_BTO.Size = new Size(124, 43);
+            buttonSearchBrand_BTO.Size = new Size(109, 58);
             buttonSearchBrand_BTO.TabIndex = 3;
             buttonSearchBrand_BTO.Text = "Поиск";
+            buttonSearchBrand_BTO.TextAlign = ContentAlignment.MiddleRight;
             buttonSearchBrand_BTO.UseVisualStyleBackColor = false;
             buttonSearchBrand_BTO.Click += buttonSearchBrand_BTO_Click;
             // 
@@ -328,13 +350,16 @@
             // 
             // buttonSearchOwner_BTO
             // 
-            buttonSearchOwner_BTO.BackColor = Color.CornflowerBlue;
-            buttonSearchOwner_BTO.Location = new Point(389, 0);
+            buttonSearchOwner_BTO.BackColor = Color.LightSkyBlue;
+            buttonSearchOwner_BTO.Image = (Image)resources.GetObject("buttonSearchOwner_BTO.Image");
+            buttonSearchOwner_BTO.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonSearchOwner_BTO.Location = new Point(384, 3);
             buttonSearchOwner_BTO.Margin = new Padding(4, 7, 4, 7);
             buttonSearchOwner_BTO.Name = "buttonSearchOwner_BTO";
-            buttonSearchOwner_BTO.Size = new Size(124, 43);
+            buttonSearchOwner_BTO.Size = new Size(110, 58);
             buttonSearchOwner_BTO.TabIndex = 0;
             buttonSearchOwner_BTO.Text = "Поиск";
+            buttonSearchOwner_BTO.TextAlign = ContentAlignment.MiddleRight;
             buttonSearchOwner_BTO.UseVisualStyleBackColor = false;
             buttonSearchOwner_BTO.Click += buttonSearchOwner_BTO_Click;
             // 
@@ -342,12 +367,30 @@
             // 
             toolTipMain_BTO.ToolTipTitle = "Подсказка";
             // 
+            // splitter1
+            // 
+            splitter1.Location = new Point(0, 72);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(4, 801);
+            splitter1.TabIndex = 4;
+            splitter1.TabStop = false;
+            // 
+            // splitter2
+            // 
+            splitter2.Location = new Point(4, 72);
+            splitter2.Name = "splitter2";
+            splitter2.Size = new Size(4, 801);
+            splitter2.TabIndex = 5;
+            splitter2.TabStop = false;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(192, 255, 192);
+            BackColor = Color.LightCyan;
             ClientSize = new Size(1667, 873);
+            Controls.Add(splitter2);
+            Controls.Add(splitter1);
             Controls.Add(tableLayoutPanelMain_BTO);
             Controls.Add(toolStripMain_BTO);
             Controls.Add(menuStripMain_BTO);
@@ -398,5 +441,7 @@
         private System.Windows.Forms.TextBox textBoxSearchOwner_BTO;
         private System.Windows.Forms.Button buttonSearchOwner_BTO;
         private System.Windows.Forms.ToolTip toolTipMain_BTO;
+        private Splitter splitter1;
+        private Splitter splitter2;
     }
 }

@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using Tyuiu.BabenkovTO.Sprint7.Project.V5.Lib;
 
 namespace Project.V5
@@ -20,6 +22,7 @@ namespace Project.V5
             InitializeComponent();
             _service = service;
             LoadData_BTO();
+            
         }
 
         private void LoadData_BTO()
@@ -37,11 +40,19 @@ namespace Project.V5
 
             chartStats_BTO.Series.Clear();
             var series = chartStats_BTO.Series.Add("Статистика");
-            //series.ChartType = SeriesChartType.Pie;
+            series.ChartType = SeriesChartType.Pie;
             series["PieLabelStyle"] = "Disabled";
-            series.Points.AddXY("Записи", total);
-            series.Points.AddXY("Мастерские", workshops);
-            series.Points.AddXY("Механики", mechanics);
+
+            int totalSum = total + workshops + mechanics;
+
+            var point1 = series.Points.AddXY("Записи", total);
+            
+
+            var point2 = series.Points.AddXY("Мастерские", workshops);
+            
+
+            var point3 = series.Points.AddXY("Механики", mechanics);
+            
         }
     }
 }
