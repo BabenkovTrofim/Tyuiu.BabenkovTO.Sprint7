@@ -46,11 +46,7 @@ namespace Project.V5
             int totalSum = total + workshops + mechanics;
 
             var point1 = series.Points.AddXY("Записи", total);
-            
-
             var point2 = series.Points.AddXY("Мастерские", workshops);
-            
-
             var point3 = series.Points.AddXY("Механики", mechanics);
             
         }

@@ -30,7 +30,7 @@
             for (int i = 1; i < lines.Length; i++)
             {
                 var parts = lines[i].Split(',');
-                if (parts.Length != 10) continue; //должно быть 10 частей, если нет, то пропускаем
+                if (parts.Length != 10) continue; //должно быть 10 частей, если нет, то пропкаем
 
                 records.Add(new RepairRecord
                 {
