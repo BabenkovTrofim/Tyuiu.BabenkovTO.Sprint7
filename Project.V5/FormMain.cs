@@ -49,27 +49,34 @@ namespace Project.V5
         private void buttonSearchOwner_BTO_Click(object sender, EventArgs e)
         {
             var query = textBoxSearchOwner_BTO.Text.Trim();
-            if (!string.IsNullOrEmpty(query))
+            if (string.IsNullOrEmpty(query))
             {
-                dataGridViewMain_BTO.DataSource = _dataService.SearchByOwnerName(query);
+                MessageBox.Show("Введите ФИО владельца для поиска.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadDataGrid_BTO(); // Показываем все записи
+                return;
             }
-            else
-            {
-                LoadDataGrid_BTO();
-            }
+            var results = _dataService.SearchByOwnerName(query);
+            dataGridViewMain_BTO.DataSource = results;
+
+            if (results.Count == 0)
+                MessageBox.Show("Записи не найдены.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void buttonSearchBrand_BTO_Click(object sender, EventArgs e)
         {
             var query = textBoxSearchBrand_BTO.Text.Trim();
-            if (!string.IsNullOrEmpty(query))
+            if (string.IsNullOrEmpty(query))
             {
-                dataGridViewMain_BTO.DataSource = _dataService.SearchByCarBrand(query);
-            }
-            else
-            {
+                MessageBox.Show("Введите марку автомобиля для поиска.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 LoadDataGrid_BTO();
+                return;
             }
+            var results = _dataService.SearchByCarBrand(query);
+            dataGridViewMain_BTO.DataSource = results;
+
+            if (results.Count == 0)
+                MessageBox.Show("Записи не найдены.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonRefresh_BTO_Click(object sender, EventArgs e) // обновил таблицу

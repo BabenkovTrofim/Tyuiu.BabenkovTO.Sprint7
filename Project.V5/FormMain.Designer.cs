@@ -98,6 +98,7 @@
             открытьToolStripMenuItem_BTO.Name = "открытьToolStripMenuItem_BTO";
             открытьToolStripMenuItem_BTO.Size = new Size(261, 34);
             открытьToolStripMenuItem_BTO.Text = "Открыть...";
+            открытьToolStripMenuItem_BTO.ToolTipText = "Нажмите, чтобы открыть файл";
             открытьToolStripMenuItem_BTO.Click += buttonOpenFile_BTO_Click;
             // 
             // сохранитьКакToolStripMenuItem_BTO
@@ -107,6 +108,7 @@
             сохранитьКакToolStripMenuItem_BTO.Name = "сохранитьКакToolStripMenuItem_BTO";
             сохранитьКакToolStripMenuItem_BTO.Size = new Size(261, 34);
             сохранитьКакToolStripMenuItem_BTO.Text = "Сохранить как...";
+            сохранитьКакToolStripMenuItem_BTO.ToolTipText = "Нажмите, чтобы сохранить файл как..";
             сохранитьКакToolStripMenuItem_BTO.Click += buttonSaveFile_BTO_Click;
             // 
             // toolStripSeparator1_BTO
@@ -139,8 +141,9 @@
             // 
             статистикаToolStripMenuItem_BTO.Image = (Image)resources.GetObject("статистикаToolStripMenuItem_BTO.Image");
             статистикаToolStripMenuItem_BTO.Name = "статистикаToolStripMenuItem_BTO";
-            статистикаToolStripMenuItem_BTO.Size = new Size(210, 34);
+            статистикаToolStripMenuItem_BTO.Size = new Size(224, 34);
             статистикаToolStripMenuItem_BTO.Text = "Статистика";
+            статистикаToolStripMenuItem_BTO.ToolTipText = "Статистика по вашему файлу";
             статистикаToolStripMenuItem_BTO.Click += статистикаToolStripMenuItem_BTO_Click;
             // 
             // справкаToolStripMenuItem_BTO
@@ -159,6 +162,7 @@
             руководствоПользователяToolStripMenuItem_BTO.Name = "руководствоПользователяToolStripMenuItem_BTO";
             руководствоПользователяToolStripMenuItem_BTO.Size = new Size(373, 34);
             руководствоПользователяToolStripMenuItem_BTO.Text = "Руководство пользователя";
+            руководствоПользователяToolStripMenuItem_BTO.ToolTipText = "Инструкция по пользованию\r\nпрограммой";
             руководствоПользователяToolStripMenuItem_BTO.Click += руководствоПользователяToolStripMenuItem_BTO_Click;
             // 
             // оПрограммеToolStripMenuItem_BTO
@@ -167,6 +171,7 @@
             оПрограммеToolStripMenuItem_BTO.Name = "оПрограммеToolStripMenuItem_BTO";
             оПрограммеToolStripMenuItem_BTO.Size = new Size(373, 34);
             оПрограммеToolStripMenuItem_BTO.Text = "О программе";
+            оПрограммеToolStripMenuItem_BTO.ToolTipText = "Информация о разработчике";
             оПрограммеToolStripMenuItem_BTO.Click += оПрограммеToolStripMenuItem_BTO_Click;
             // 
             // toolStripMain_BTO
@@ -322,7 +327,7 @@
             buttonSearchBrand_BTO.Location = new Point(1025, 0);
             buttonSearchBrand_BTO.Margin = new Padding(4, 7, 4, 7);
             buttonSearchBrand_BTO.Name = "buttonSearchBrand_BTO";
-            buttonSearchBrand_BTO.Size = new Size(109, 58);
+            buttonSearchBrand_BTO.Size = new Size(121, 58);
             buttonSearchBrand_BTO.TabIndex = 3;
             buttonSearchBrand_BTO.Text = "Поиск";
             buttonSearchBrand_BTO.TextAlign = ContentAlignment.MiddleRight;
@@ -356,7 +361,7 @@
             buttonSearchOwner_BTO.Location = new Point(384, 3);
             buttonSearchOwner_BTO.Margin = new Padding(4, 7, 4, 7);
             buttonSearchOwner_BTO.Name = "buttonSearchOwner_BTO";
-            buttonSearchOwner_BTO.Size = new Size(110, 58);
+            buttonSearchOwner_BTO.Size = new Size(121, 58);
             buttonSearchOwner_BTO.TabIndex = 0;
             buttonSearchOwner_BTO.Text = "Поиск";
             buttonSearchOwner_BTO.TextAlign = ContentAlignment.MiddleRight;
@@ -399,6 +404,7 @@
             Margin = new Padding(4, 7, 4, 7);
             Name = "FormMain";
             Text = "Авторемонтные мастерские — Главное окно";
+            WindowState = FormWindowState.Maximized;
             menuStripMain_BTO.ResumeLayout(false);
             menuStripMain_BTO.PerformLayout();
             toolStripMain_BTO.ResumeLayout(false);

@@ -43,7 +43,7 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(591, 419);
+            textBox1.Size = new Size(591, 441);
             textBox1.TabIndex = 1;
             textBox1.Text = resources.GetString("textBox1.Text");
             // 
@@ -81,7 +81,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightCyan;
-            ClientSize = new Size(849, 443);
+            ClientSize = new Size(849, 465);
             Controls.Add(buttonOkAbout_BTO);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
@@ -89,7 +89,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FormAbout";
-            Text = "FormAbout";
+            Text = "О программе - Авторемонтные мастерские";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

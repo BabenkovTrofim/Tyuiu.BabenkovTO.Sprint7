@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Здесь представленны данные статистики из загруженного вами файла. Данные представленны в двух типах: таблица и диаграмма. 
+Ниже вы можете увидеть по каким параметрам подведена статистика.
+1 - Общее количество записей
+2 - Количество механиков
+3 - Количество мастерских
+4 - Популярная марка машины
+5 - Популярная мастерская
+6 - Количество механников с параметром квалификация - "Высший"
+</value>
+  </data>
 </root>

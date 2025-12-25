@@ -27,28 +27,45 @@ namespace Project.V5
 
         private void LoadData_BTO()
         {
-            var total = _service.GetTotalRecords();
-            var workshops = _service.GetUniqueWorkshops();
-            var mechanics = _service.GetUniqueMechanics();
+            int totalRecords = _service.GetTotalRecords();
+            int uniqueMechanics = _service.GetUniqueMechanics();
+            int uniqueWorkshops = _service.GetUniqueWorkshops();
+            string popularBrand = _service.GetMostPopularCarBrand();
+            string popularWorkshop = _service.GetMostPopularWorkshop();
+            int seniorMechanics = _service.GetSeniorMechanicsCount();
 
-            dataGridViewStats_BTO.DataSource = new[]
+            // Заполнил таблицу
+            var stats = new[]
             {
-            new { Показатель = "Всего записей", Значение = total },
-            new { Показатель = "Мастерских", Значение = workshops },
-            new { Показатель = "Механиков", Значение = mechanics }
-        };
+                new { Показатель = "Всего записей", Значение = totalRecords.ToString() },
+                new { Показатель = "Уникальных механиков", Значение = uniqueMechanics.ToString() },
+                new { Показатель = "Уникальных мастерских", Значение = uniqueWorkshops.ToString() },
+                new { Показатель = "Популярная марка", Значение = popularBrand },
+                new { Показатель = "Популярная мастерская", Значение = popularWorkshop },
+                new { Показатель = "Механиков (Высший)", Значение = seniorMechanics.ToString() }
+            };
+            dataGridViewStats_BTO.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStats_BTO.DataSource = stats;
+            dataGridViewStats_BTO.Font = new Font("Segoe UI", 14f);
 
+            // заполнил диаграмму
             chartStats_BTO.Series.Clear();
             var series = chartStats_BTO.Series.Add("Статистика");
             series.ChartType = SeriesChartType.Pie;
-            series["PieLabelStyle"] = "Disabled";
+            series["PieLabelStyle"] = "Outside";
+            series["PieLineColor"] = "Black";
 
-            int totalSum = total + workshops + mechanics;
+            AddPieSlice(series, "Всего записей", totalRecords);
+            AddPieSlice(series, "Механики", uniqueMechanics);
+            AddPieSlice(series, "Мастерские", uniqueWorkshops);
+            AddPieSlice(series, "Высший", seniorMechanics);
+        }
 
-            var point1 = series.Points.AddXY("Записи", total);
-            var point2 = series.Points.AddXY("Мастерские", workshops);
-            var point3 = series.Points.AddXY("Механики", mechanics);
-            
+        private void AddPieSlice(Series series, string label, int value)
+        {
+            var index = series.Points.AddXY(label, value);
+            series.Points[index].Label = $"{label}\n{value}";
+            series.Font = new Font("Segoe UI", 14f, FontStyle.Bold);
         }
     }
 }

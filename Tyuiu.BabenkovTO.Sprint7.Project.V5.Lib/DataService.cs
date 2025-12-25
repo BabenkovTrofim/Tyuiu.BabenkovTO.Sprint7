@@ -30,7 +30,7 @@
             for (int i = 1; i < lines.Length; i++)
             {
                 var parts = lines[i].Split(',');
-                if (parts.Length != 10) continue; //должно быть 10 частей, если нет, то пропкаем
+                if (parts.Length != 10) continue; //должно быть 10 частей, если нет, то пропутил
 
                 records.Add(new RepairRecord
                 {
@@ -98,6 +98,26 @@
         public int GetUniqueWorkshops() => LoadRecords().Select(r => r.WorkshopName).Distinct().Count();
         public int GetUniqueMechanics() => LoadRecords().Select(r => r.MechanicFullName).Distinct().Count();
 
+        public string GetMostPopularCarBrand()
+        {
+            return LoadRecords()
+                .GroupBy(r => r.CarBrand)
+                .OrderByDescending(g => g.Count())
+                .FirstOrDefault()?.Key ?? "Нет";
+        }
 
+        public string GetMostPopularWorkshop()
+        {
+            return LoadRecords()
+                .GroupBy(r => r.WorkshopName)
+                .OrderByDescending(g => g.Count())
+                .FirstOrDefault()?.Key ?? "Нет";
+        }
+
+        public int GetSeniorMechanicsCount()
+        {
+            return LoadRecords().Count(r =>
+                string.Equals(r.MechanicQualification, "Высший", StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

@@ -38,14 +38,13 @@
             // 
             textBoxGuide_BTO.BackColor = Color.White;
             textBoxGuide_BTO.BorderStyle = BorderStyle.FixedSingle;
-            textBoxGuide_BTO.Font = new Font("Consolas", 12F);
-            textBoxGuide_BTO.Location = new Point(13, 14);
+            textBoxGuide_BTO.Font = new Font("Consolas", 14F);
+            textBoxGuide_BTO.Location = new Point(10, 14);
             textBoxGuide_BTO.Margin = new Padding(4, 5, 4, 5);
             textBoxGuide_BTO.Multiline = true;
             textBoxGuide_BTO.Name = "textBoxGuide_BTO";
             textBoxGuide_BTO.ReadOnly = true;
-            textBoxGuide_BTO.ScrollBars = ScrollBars.Both;
-            textBoxGuide_BTO.Size = new Size(822, 360);
+            textBoxGuide_BTO.Size = new Size(817, 287);
             textBoxGuide_BTO.TabIndex = 1;
             textBoxGuide_BTO.Text = resources.GetString("textBoxGuide_BTO.Text");
             textBoxGuide_BTO.WordWrap = false;
@@ -53,7 +52,7 @@
             // buttonOkGuide_BTO
             // 
             buttonOkGuide_BTO.BackColor = SystemColors.Window;
-            buttonOkGuide_BTO.Location = new Point(715, 394);
+            buttonOkGuide_BTO.Location = new Point(729, 309);
             buttonOkGuide_BTO.Name = "buttonOkGuide_BTO";
             buttonOkGuide_BTO.Size = new Size(98, 35);
             buttonOkGuide_BTO.TabIndex = 1;
@@ -75,7 +74,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightCyan;
-            ClientSize = new Size(845, 441);
+            ClientSize = new Size(840, 353);
             Controls.Add(textBoxGuide_BTO);
             Controls.Add(buttonOkGuide_BTO);
             Controls.Add(button1);
