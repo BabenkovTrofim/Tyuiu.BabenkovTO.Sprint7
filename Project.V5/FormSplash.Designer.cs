@@ -62,9 +62,9 @@
             labelLoad_BTO.Font = new Font("Franklin Gothic Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             labelLoad_BTO.Location = new Point(33, 277);
             labelLoad_BTO.Name = "labelLoad_BTO";
-            labelLoad_BTO.Size = new Size(219, 38);
+            labelLoad_BTO.Size = new Size(236, 38);
             labelLoad_BTO.TabIndex = 4;
-            labelLoad_BTO.Text = "PLEAS WAIT....";
+            labelLoad_BTO.Text = "PLEASE WAIT....";
             // 
             // FormSplash
             // 
