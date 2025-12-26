@@ -34,7 +34,7 @@ namespace Project.V5
             string popularWorkshop = _service.GetMostPopularWorkshop();
             int seniorMechanics = _service.GetSeniorMechanicsCount();
 
-            // Заполнил таблицу
+            
             var stats = new[]
             {
                 new { Показатель = "Всего записей", Значение = totalRecords.ToString() },
@@ -48,7 +48,7 @@ namespace Project.V5
             dataGridViewStats_BTO.DataSource = stats;
             dataGridViewStats_BTO.Font = new Font("Segoe UI", 14f);
 
-            // заполнил диаграмму
+            
             chartStats_BTO.Series.Clear();
             var series = chartStats_BTO.Series.Add("Статистика");
             series.ChartType = SeriesChartType.Pie;

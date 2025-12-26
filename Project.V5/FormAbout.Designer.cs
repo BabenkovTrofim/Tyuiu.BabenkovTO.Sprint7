@@ -43,16 +43,16 @@
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
-            textBox1.Size = new Size(591, 441);
+            textBox1.Size = new Size(604, 441);
             textBox1.TabIndex = 1;
             textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(607, 12);
+            pictureBox1.Location = new Point(620, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(230, 324);
+            pictureBox1.Size = new Size(228, 324);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;

@@ -16,20 +16,20 @@ namespace Project.V5
         }
 
 
-        // загружаю данные в таблицу
+        
         private void LoadDataGrid_BTO()
         {
-            dataGridViewMain_BTO.DataSource = _dataService.LoadRecords(); // поместил список(List<RepairRecord>) в таблицу
+            dataGridViewMain_BTO.DataSource = _dataService.LoadRecords(); 
             dataGridViewMain_BTO.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void buttonAdd_BTO_Click(object sender, EventArgs e)
         {
-            var form = new FormAddRecord(); // открыл форму для ввода данных
-            if (form.ShowDialog() == DialogResult.OK) // если пользователь нвжал ОК, то ..
+            var form = new FormAddRecord(); 
+            if (form.ShowDialog() == DialogResult.OK) 
             {
                 _dataService.AddRecord(form.CreatedRecord_BTO);
-                LoadDataGrid_BTO(); // обновил таблицу в интерфейсе
+                LoadDataGrid_BTO(); 
             }
         }
 
@@ -42,7 +42,7 @@ namespace Project.V5
             }
 
             var rowIndex = dataGridViewMain_BTO.SelectedRows[0].Index;
-            _dataService.DeleteRecord(rowIndex); // удалил выбранную строку по индексу
+            _dataService.DeleteRecord(rowIndex); 
             LoadDataGrid_BTO();
         }
 
@@ -52,7 +52,7 @@ namespace Project.V5
             if (string.IsNullOrEmpty(query))
             {
                 MessageBox.Show("Введите ФИО владельца для поиска.", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadDataGrid_BTO(); // Показываем все записи
+                LoadDataGrid_BTO(); 
                 return;
             }
             var results = _dataService.SearchByOwnerName(query);
@@ -79,7 +79,7 @@ namespace Project.V5
                 MessageBox.Show("Записи не найдены.", "Результат поиска", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void buttonRefresh_BTO_Click(object sender, EventArgs e) // обновил таблицу
+        private void buttonRefresh_BTO_Click(object sender, EventArgs e) 
         {
             LoadDataGrid_BTO();
             textBoxSearchOwner_BTO.Clear();
